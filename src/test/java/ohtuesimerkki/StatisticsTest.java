@@ -31,5 +31,10 @@ public class StatisticsTest {
     public void setUp() {
     	stats = new Statistics(readerStub);
     }
+    
+    @Test
+    public void statsNotNull() {
+    	assertNotNull(stats);
+    }
 
 }

@@ -1,3 +1,3 @@
 # ohtu-viikko1
 
-Travisin käyttöönottotesti
+[![Build Status](https://travis-ci.org/volepp/ohtu-viikko1.svg?branch=master)](https://travis-ci.org/volepp/ohtu-viikko1)

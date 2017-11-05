@@ -37,4 +37,38 @@ public class StatisticsTest {
     	assertNotNull(stats);
     }
 
+    @Test
+    public void findsRightPlayer() {
+    	Player found = stats.search("Kurri");
+    	Player correct = readerStub.getPlayers().get(2);
+    	
+    	assertNotNull(found);
+    	assertEquals(correct.getName(), found.getName());
+    }
+    
+    @Test
+    public void returnsNullIfPlayerNotFound() {
+    	assertNull(stats.search("Malkin"));
+    }
+    
+    @Test
+    public void findsTeamCorrectly() {
+    	Player first = stats.team("DET").get(0);
+    	
+    	assertEquals(readerStub.getPlayers().get(3).getName(), first.getName());
+    	
+    	Player second = stats.team("EDM").get(1);
+    	
+    	assertEquals(readerStub.getPlayers().get(2).getName(), second.getName());
+    }
+    
+    @Test
+    public void topScorersAreCorrect() {
+    	List<Player> topScorers = stats.topScorers(3);
+    	
+    	assertEquals(readerStub.getPlayers().get(4).getName(), topScorers.get(0).getName());
+    	assertEquals(readerStub.getPlayers().get(1).getName(), topScorers.get(1).getName());
+    	assertEquals(readerStub.getPlayers().get(3).getName(), topScorers.get(2).getName());
+    }
+    
 }

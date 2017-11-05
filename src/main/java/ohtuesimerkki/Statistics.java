@@ -10,7 +10,7 @@ public class Statistics {
     private List<Player> players;
 
     public Statistics(Reader playerReader) {
-        PlayerReader reader = (PlayerReader)playerReader;
+        Reader reader = playerReader;
         players = reader.getPlayers();       
     }
 

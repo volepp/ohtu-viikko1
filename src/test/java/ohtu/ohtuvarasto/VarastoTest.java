@@ -124,7 +124,7 @@ public class VarastoTest {
     public void saldoksiTilavuusJosLisataanLiikaa() {
     	varasto.lisaaVarastoon(11);
     	
-    	assertEquals(11.0, varasto.getSaldo(), vertailuTarkkuus);
+    	assertEquals(10.0, varasto.getSaldo(), vertailuTarkkuus);
     }
     
     @Test
